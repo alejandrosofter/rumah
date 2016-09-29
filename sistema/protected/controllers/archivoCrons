@@ -1,0 +1,3 @@
+* * * * 3 php GENERALES_PATH_CRONS/console.php nuevaTareaUsuario agregarTareaUsuario --idTarea=716 --idUsuario=1 --idUsuarioEmisor=1
+* * * * 3 php GENERALES_PATH_CRONS/console.php nuevaTareaUsuario agregarTareaUsuario --idTarea=717 --idUsuario=1 --idUsuarioEmisor=1
+* * * * * php /var/www/plataformaYii/GfoxV3/console.php nuevaTareaUsuario agregarTareaUsuario --idTarea=792 --idUsuario=13 --idUsuarioEmisor=2

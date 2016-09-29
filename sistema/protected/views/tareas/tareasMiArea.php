@@ -1,0 +1,60 @@
+<?php
+$this->breadcrumbs=array(
+	'Centro de Tareas'=>array('/tareas/centroTareas'),
+	'Mis Tareas'
+);
+
+$this->menu=array(
+	array('label'=>'Listar Tareas', 'url'=>array('index')),
+	array('label'=>'Mis Tareas'),
+	array('label'=>'Nueva Tarea', 'url'=>array('create')),
+	array('label'=>'Imprimir', 'url'=>array('/impresiones/create&tipoImpresion=tareasMiArea')),
+	
+);
+?>
+
+<h1>Tareas de mi Area</h1>
+A continuación se muestran todas las tareas de mi Area.
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'tareas-grid',
+	'dataProvider'=>$model,
+	'columns'=>array(
+	'cliente',
+	'cliente',
+//		'fechaTarea',
+		array(
+                  'name'=>'fechaTarea',
+                    'type'=>'html',
+                    'value'=>'($data->fechaTarea=="")?"-":Yii::app()->dateFormatter->format("dd-M-y",$data->fechaTarea);',
+                ),
+		'prioridadTarea',
+		'estadoTarea',
+		'descripcionTarea',
+		'tipoTarea',
+		array(
+                  'name'=>'cantidadTareas',
+                    'type'=>'html',
+                    'value'=>'CHtml::link("ver (".$data->cantidadTareas.")",Yii::app()->createUrl("tareasEstados/estadosTarea",array("idCliente"=>$data->idClienteTarea,"id"=>$data->idTarea,"cliente"=>$data->cliente)))',
+                ),
+		array(
+			'class'=>'CButtonColumn',
+			'template' => '{personal} {finalizar} {view} {update} {delete}',
+			'buttons' => array(
+                            'finalizar' => array(
+                    			'label'=>'Agregar Estado',     // text label of the button
+                    			'options'=>array('style'=>'width:150px'),
+                    			'url'=>'Yii::app()->createUrl("tareasEstados/create",array("id"=>$data->idTarea,"cliente"=>$data->cliente,"idCliente"=>$data->idClienteTarea))'   ,    // the PHP expression for generating the URL of the button
+                    			'imageUrl'=>Yii::app()->request->baseUrl.'/images/iconos/famfam/arrow_right.png',  // image URL of the button. If not set or false, a text link is used
+                    
+                            ),
+                            
+                            'personal' => array(
+                    			'label'=>'Personal',
+                    			'url'=>'Yii::app()->createUrl("tareasDestinatarios/tareas",array("id"=>$data->idTarea,"cliente"=>$data->cliente,"idCliente"=>$data->idClienteTarea))'   ,    // the PHP expression for generating the URL of the button
+                    			'imageUrl'=>Yii::app()->request->baseUrl.'/images/iconos/famfam/group.png',  // image URL of the button. If not set or false, a text link is used
+                    
+                            ))
+			
+		),
+	),
+)); ?>

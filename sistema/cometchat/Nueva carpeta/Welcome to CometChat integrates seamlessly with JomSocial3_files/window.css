@@ -1,0 +1,252 @@
+/* CSS Document */
+#cWindow {
+	position: absolute;
+	z-index: 100;
+}
+#cWindow #cwin_close_btn:link,
+#cWindow #cwin_close_btn:visited {
+	height: 30px;
+	width: 30px;
+	float: right;
+	text-indent: -9999px;
+	outline-style: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-image: url(window/dialog/closebox-normal.png);
+	margin: 0;
+}
+#cWindow #cwin_close_btn:hover {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-image: url(window/dialog/closebox-hover.png);
+}
+#cWindow  #cwin_logo {
+	width: 90%;
+	height: 26px;
+	margin: 2px 0 0 2px;
+	color: #FFFFFF;
+	font-weight:bold;
+	float: left;
+	font-size:16px;
+	margin:8px 0pt 0pt 8px;
+}
+#cWindow  #cwin_tl {
+	width: 20px;
+	height: 20px;
+	background: transparent url(window/tl.png) no-repeat top left;
+	float: left;
+}
+#cWindow #cwin_tm {
+	background: transparent url(window/bm.png) no-repeat top left;
+	float: left;
+	height: 20px;
+}
+#cWindow #cwin_tr {
+	background: transparent url(window/tr.png) no-repeat top right;
+	float: left;
+	width: 20px;
+	height: 20px;
+}
+#cWindow #cwin_ml {
+	width: 20px;
+	background: transparent url(window/rm.png) no-repeat top left;
+	float: left;
+	height: 560px;
+}
+#cWindow #cwin_mr {
+	width: 20px;
+	background: transparent url(window/rm.png) no-repeat top right;
+    height: 560px;
+	float: left;
+}
+#cWindow #cwin_bl {
+	width: 20px;
+	height: 20px;
+	background: transparent url(window/bl.png) no-repeat bottom left;
+	float: left;
+}
+#cWindow #cwin_bm {
+	background: transparent url(window/bm.png) no-repeat bottom left;
+	float: left;
+	height: 20px;
+}
+#cWindow #cwin_br {
+	width: 20px;
+	height: 20px;
+	background: transparent url(window/br.png) no-repeat bottom right;
+	float: left;
+}
+
+body #cwin-wait,
+#cWindow #cwin-wait {
+	width: 43px;
+	height: 11px;
+	background: transparent url(window/wait.gif) no-repeat;
+	display: none;
+}
+#cWindowContentOuter {
+	float: left;
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+}
+#cWindowContentTop {
+	height: 30px;
+	background: #333333;
+	border-bottom: solid 1px #999999;
+	float: left;
+}
+#cWindowContent {
+	width: 100%;
+	background:	#ffffff;
+    height: 560px;
+	float: left;
+	padding: 10px;
+	position: relative; 
+	overflow: auto;
+}
+#cWindowContent .success {
+	color: green;	
+}
+#cWindowContent .failed {
+	color: red;
+}
+#cWindowContent.winloading {
+	background-image: url(window/wait.gif);
+	background-position: center center;
+	background-repeat:no-repeat;
+}
+#cWindowAction {
+	border-top: 1px solid #fff; 
+	background: #ccc; 
+	position: absolute; 
+	bottom: -40px; 
+	width: 100%;
+	height: 32px; 
+	left: 0px;
+}
+#cWindowAction table {
+	height: 32px;
+	padding-right: 4px;
+	width: 100%;
+}
+#cWindowAction .button {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	background: #666 none repeat scroll 0 0;
+	border: 1px solid #333;
+	font-size: 11px;
+}
+#cWindowAction td.left {
+	width: 0;	
+}
+body #cWindowAction input,
+body #cWindowAction textarea,
+body #cWindowAction select,
+body #cWindowAction label {
+	margin: 0 0 5px;
+}
+body #cWindowAction .button:hover, 
+body #cWindowAction .button:focus {
+	background: #333333 none repeat scroll 0 0;
+	border: 1px solid #999 !important;
+	color: #fff !important;
+}
+#cWindowContent dl {
+	margin: 0;
+	padding: 0;
+}
+#cWindowContent .col-left {
+	width: 23%;
+	line-height: 25px;
+	text-indent: 10px;
+	font-size: 11px;
+	font-weight: 700;
+	color: #666;
+	margin: 0 0 5px;
+	float: left;
+	display: block;
+	clear: both;
+	padding: 0;
+}
+#cWindowContent .col-right {
+	float: left;
+	display: block;
+	width: 70%;
+	line-height: 22px;
+	margin: 0 0 5px;
+	padding: 0;
+}
+#cWindowContent .col-right .text {
+	width: 100%;
+}
+#cWindowContent .composeForm {
+	padding: 20px 10px;
+}
+
+#cWindow.dialog {}
+#cWindow.dialog #cwin_close_btn:link,
+#cWindow.dialog #cwin_close_btn:visited {
+	background-image: url(window/dialog/closebox-normal.png);
+}
+#cWindow #cwin_close_btn:hover {
+	background-image: url(window/dialog/closebox-hover.png);
+}
+
+/* Warning Styles */
+#cWindow.warning {}
+#cWindow.warning #cWindowContentTop {
+	height: 30px;
+	background: #993;
+	border-bottom: solid 1px #660;
+	float: left;
+}
+#cWindow.warning #cwin_logo {
+	width: auto;
+	height: 30px;
+	font-weight: bold;
+	float: left;
+	font-size: 16px;
+	line-height: 30px;
+	margin: 0;
+	padding-left: 32px;
+	color: #fff;
+	background: transparent url(window/warning/icon.gif) no-repeat 0 -1px;
+}
+#cWindow.warning #cwin_close_btn:link,
+#cWindow.warning #cwin_close_btn:visited {
+	background-image: url(window/warning/closebox-normal.png);
+}
+#cWindow.warning #cwin_close_btn:hover {
+	background-image: url(window/warning/closebox-hover.png);
+}
+
+/* Error Styles */
+#cWindow.error {}
+#cWindow.error #cWindowContentTop {
+	height: 30px;
+	background: #930;
+	border-bottom: solid 1px #600;
+	float: left;
+}
+#cWindow.error #cwin_logo {
+	width: auto;
+	height: 30px;
+	font-weight: bold;
+	float: left;
+	font-size: 16px;
+	line-height: 30px;
+	margin: 0;
+	padding-left: 32px;
+	color: #fff;
+	background: transparent url(window/error/icon.gif) no-repeat 0 0;
+}
+#cWindow.error #cwin_close_btn:link,
+#cWindow.error #cwin_close_btn:visited {
+	background-image: url(window/error/closebox-normal.png);
+}
+#cWindow.error #cwin_close_btn:hover {
+	background-image: url(window/error/closebox-hover.png);
+}

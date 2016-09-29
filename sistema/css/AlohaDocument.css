@@ -1,0 +1,39 @@
+body {
+  font-size:0.9em;
+	font-family: arial;
+}
+
+body {
+  background-image: url("background.png");
+}
+
+#main {
+  width: 820px;
+  
+  margin-top: 5px;
+  margin-left: auto ;
+  margin-right: auto ;
+  padding: 70px;
+  background-color: white;
+  border-radius:5px;
+  -moz-border-radius: 1px;
+  box-shadow: 3px 3px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 3px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow: 3px 3px rgba(0,0,0,0.3);
+}
+#pie {
+  width: 820px;
+   
+  margin-top: 5px;
+  margin-left: auto ;
+  margin-right: auto ;
+  padding: 6;
+  background-color: #221F16;
+ 	text-align:right;
+  color: white;
+  border-radius: 1px;
+  -moz-border-radius: 1px;
+  box-shadow: 5px 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 5px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 5px 5px rgba(0,0,0,0.3);
+}
