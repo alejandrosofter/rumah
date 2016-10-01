@@ -1,1 +1,0 @@
-<iframe height="300" frameborder="0" width="500" id="cometchat_trayicon_1_iframe" allowtransparency="true" src="/cometchat/modules/chatrooms/index.php"/>
