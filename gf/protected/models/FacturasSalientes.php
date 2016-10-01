@@ -1017,6 +1017,7 @@ SELECT * from facturasSalientes_view WHERE idFacturaSaliente = $idFactura");
         {
             $tal=Talonario::model()->findByPk($datos['idTalonario']);
             $cliente=Clientes::model()->findByPk($datos['idCliente']);
+					$razonSocial=isset($cliente)?$cliente->razonSocial:"CONS-FINAL(d)";
             $fecha=explode(' ', $datos['fecha']);
             $nroFactura=str_pad($datos['nroFactura'],20,'0', STR_PAD_LEFT);
             $esConsumidorFinal= $this->esConsumidorFinal($datos['idCliente']);
@@ -1043,7 +1044,7 @@ SELECT * from facturasSalientes_view WHERE idFacturaSaliente = $idFactura");
             if(($nro*1)==0)$nro=str_replace('0', '1', $nro);
             
             $linea.=str_pad($nro,20,'0').''; // NRO DOCUMENTO (20)
-            $linea.=str_pad(substr(FacturasSalientes::quitarCaracteresEspeciales($cliente->razonSocial), 0,30), 30).'';  // NOMBRE CLIENTE (30)
+            $linea.=str_pad(substr(FacturasSalientes::quitarCaracteresEspeciales($razonSocial), 0,30), 30).'';  // NOMBRE CLIENTE (30)
 
             $linea.=str_pad($importeTotal,15,'0', STR_PAD_LEFT).''; // importe de la factura total 15
             $linea.=''.str_pad(0,15,'0', STR_PAD_LEFT).''; // importe de la factura NETO 15
